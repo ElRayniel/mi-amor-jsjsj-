@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Animado</title>
+    <link rel="stylesheet" href="animaciones_amor.css">
+</head>
+<body>
+    <div class="header">
+        🌸 PARA EL AMOR DE MI VIDA 🌸
+    </div>
+
+    <div class="letters-container">
+        <div class="envelope disabled">
+            Sobre 1 (Disponible el 13/12/24)
+        </div>
+        <div class="envelope disabled">
+            Sobre 2 (Disponible el 13/12/24)
+        </div>
+        <div class="envelope" onclick="openLetter(`Sobre 3\n\nDesde que llegaste a mi vida, todo cambió de una manera que jamás imaginé. No hay palabras suficientes para expresar cómo me haces sentir. Eres la luz que ilumina mis días, el refugio donde encuentro paz, y la razón detrás de cada una de mis sonrisas. Tu forma de ser, tus gestos, tus palabras, todo en ti me hace querer ser mejor y dar lo mejor de mí.\n\nCada instante contigo es un regalo que atesoro, y cada día agradezco tenerte en mi vida. Me encanta imaginar todo lo que el futuro nos depara juntos, porque sé que contigo a mi lado, todo es posible. Ashly, eres el sueño que nunca supe que tenía y el amor que siempre quise encontrar.\n\nPara el amor de mi vida.`)">
+            Sobre 3
+        </div>
+        <div class="envelope" onclick="openLetter(`Sobre 4\n\nHay algo en ti, algo mágico que no puedo describir, que me atrajo desde el primer momento. Desde que nos encontramos, mi mundo ha cambiado por completo, llenándose de colores, alegría y amor. Tu risa es mi melodía favorita, y tus abrazos son el lugar donde quiero estar siempre.\n\nNo sé cómo agradecerte por todo lo que haces por mí, por ser esa persona que me inspira y me hace sentir único. Tú eres mi todo, mi compañera, mi fuerza y mi debilidad. Te amo de una manera que ni siquiera las palabras pueden explicar, pero espero que cada día sientas en mi mirada cuánto significas para mí.\n\nPara Ashly Fernanda Baez Vargas, mi mayor tesoro.`)">
+            Sobre 4
+        </div>
+    </div>
+
+    <button class="no-touch" onclick="showSecretMessage()">NO TOCAR ❤️</button>
+
+    <div class="overlay" id="letterOverlay">
+        <div class="content">
+            <button class="close-button" onclick="closeLetter()">Cerrar</button>
+            <p id="letterContent"></p>
+        </div>
+    </div>
+
+    <div class="secret-message" id="secretMessage">
+        <h1>TE AMO MUCHO MI NIÑA HERMOSA</h1>
+        <p>Es solo el comienzo, siempre contigo 💕</p>
+    </div>
+
+    <script>
+        function openLetter(content) {
+            const letterContent = document.getElementById('letterContent');
+            letterContent.innerText = content;
+            document.getElementById('letterOverlay').classList.add('active');
+        }
+
+        function closeLetter() {
+            document.getElementById('letterOverlay').classList.remove('active');
+        }
+
+        function showSecretMessage() {
+            const secretMessage = document.getElementById('secretMessage');
+            secretMessage.classList.add('active');
+        }
+    </script>
+</body>
+</html>
