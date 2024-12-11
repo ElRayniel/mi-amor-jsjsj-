@@ -19,6 +19,7 @@ body {
     margin: 20px 0;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6);
 }
 
 @keyframes fadeIn {
@@ -41,7 +42,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     animation: float 2s infinite ease-in-out;
     margin: 10px auto;
     max-width: 200px;
@@ -50,6 +51,7 @@ body {
 .envelope:hover {
     background-color: #ffe4e1;
     transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(255, 105, 180, 0.5);
 }
 
 @keyframes float {
@@ -73,10 +75,13 @@ body {
     font-size: 16px;
     cursor: pointer;
     animation: pulse 1.5s infinite;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    transition: box-shadow 0.3s;
 }
 
 .no-touch:hover {
     background-color: #ff85c1;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
 }
 
 @keyframes pulse {
@@ -225,6 +230,59 @@ body {
     left: 80%;
     animation-duration: 3.5s;
     animation-delay: 0.8s;
+}
+
+/* Partículas de corazones flotantes */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.heart-particle {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
+    animation: floatHearts 8s linear infinite;
+    opacity: 0;
+}
+
+.heart-particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.heart-particle:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.heart-particle:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+    animation-duration: 8s;
+}
+
+.heart-particle:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+    animation-duration: 6.5s;
+}
+
+.heart-particle:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+    animation-duration: 5.5s;
 }
 
 /* Fondo animado */
