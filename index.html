@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amor Animado</title>
-    <link rel="stylesheet" href="animaciones_amor.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14 de Febrero - Mi niña hermosa</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        🌸 PARA EL AMOR DE MI VIDA 🌸
+  <div id="main-container">
+    <header>
+      <h1>Feliz Día de San Valentín, mi amor</h1>
+    </header>
+
+    <section id="content">
+      <div class="envelope" id="envelope1">
+        <div class="envelope-cover">❤️ Sobre 1</div>
+        <div class="message hidden">
+          <p>Cada día a tu lado me hace amarte más y más. Eres la razón de mi felicidad, y no puedo olvidar aquel primer beso que nos dimos, el cual me parece sumamente especial. ❤️</p>
+        </div>
+      </div>
+
+      <div class="envelope" id="envelope2">
+        <div class="envelope-cover">❤️ Sobre 2</div>
+        <div class="message hidden">
+          <p>Ya tenemos 2 meses juntos, y me parecen los mejores 2 meses de mi vida. Quizas es obvio, y ya lo saber pero. Te amo. 🥰</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hidden-button">
+      <button id="secret-btn">Botón Secreto</button>
+    </section>
+
+    <div id="secret-popup" class="hidden">
+      <p>Eres el amor de mi vida. ¡Gracias por hacer cada momento mágico! 🌹</p>
     </div>
 
-    <div class="letters-container">
-        <div class="envelope disabled">
-            Sobre 1 (Disponible el 13/12/24)
-        </div>
-        <div class="envelope disabled">
-            Sobre 2 (Disponible el 13/12/24)
-        </div>
-        <div class="envelope" onclick="openLetter(`Sobre 3\n\nDesde que llegaste a mi vida, todo cambió de una manera que jamás imaginé. No hay palabras suficientes para expresar cómo me haces sentir. Eres la luz que ilumina mis días, el refugio donde encuentro paz, y la razón detrás de cada una de mis sonrisas. Tu forma de ser, tus gestos, tus palabras, todo en ti me hace querer ser mejor y dar lo mejor de mí.\n\nCada instante contigo es un regalo que atesoro, y cada día agradezco tenerte en mi vida. Me encanta imaginar todo lo que el futuro nos depara juntos, porque sé que contigo a mi lado, todo es posible. Ashly, eres el sueño que nunca supe que tenía y el amor que siempre quise encontrar.\n\nPara el amor de mi vida.`)">
-            Sobre 3
-        </div>
-        <div class="envelope" onclick="openLetter(`Sobre 4\n\nHay algo en ti, algo mágico que no puedo describir, que me atrajo desde el primer momento. Desde que nos encontramos, mi mundo ha cambiado por completo, llenándose de colores, alegría y amor. Tu risa es mi melodía favorita, y tus abrazos son el lugar donde quiero estar siempre.\n\nNo sé cómo agradecerte por todo lo que haces por mí, por ser esa persona que me inspira y me hace sentir único. Tú eres mi todo, mi compañera, mi fuerza y mi debilidad. Te amo de una manera que ni siquiera las palabras pueden explicar, pero espero que cada día sientas en mi mirada cuánto significas para mí.\n\nPara Ashly Fernanda Baez Vargas, mi mayor tesoro.`)">
-            Sobre 4
-        </div>
-    </div>
+    <audio id="background-music" loop>
+      <source src="nadie_mas.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
 
-    <button class="no-touch" onclick="showSecretMessage()">NO TOCAR ❤️</button>
+    <button id="music-toggle">🎵 Play/Pause Música</button>
+  </div>
 
-    <div class="overlay" id="letterOverlay">
-        <div class="content">
-            <button class="close-button" onclick="closeLetter()">Cerrar</button>
-            <p id="letterContent"></p>
-        </div>
-    </div>
-
-    <div class="secret-message" id="secretMessage">
-        <h1>TE AMO MUCHO MI NIÑA HERMOSA</h1>
-        <p>Espero estar junto a ti por siempre y para siempre mi niña</p>
-    </div>
-
-    <script>
-        function openLetter(content) {
-            const letterContent = document.getElementById('letterContent');
-            letterContent.innerText = content;
-            document.getElementById('letterOverlay').classList.add('active');
-        }
-
-        function closeLetter() {
-            document.getElementById('letterOverlay').classList.remove('active');
-        }
-
-        function showSecretMessage() {
-            const secretMessage = document.getElementById('secretMessage');
-            secretMessage.classList.add('active');
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
